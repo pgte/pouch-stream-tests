@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/pgte/pouch-stream-tests/issues"
   },
-  "homepage": "https://github.com/pgte/pouch-stream-tests#readme"
+  "homepage": "https://github.com/pgte/pouch-stream-tests#readme",
+  "dependencies": {
+    "async": "^1.4.2",
+    "code": "^1.5.0",
+    "lab": "^6.1.0",
+    "memdown": "^1.1.0",
+    "pouchdb": "^4.0.3"
+  }
 }
