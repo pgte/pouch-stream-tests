@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "description": "PouchDB stream tests",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pgte/pouch-stream-tests.git"
   },
-  "author": "pgte",
+  "maintainers": [
+    "pgte <i@pgte.me>"
+  ],
+  "contributors": [
+    "Pedro Teixeira <i@pgte.me> (https://github.com/pgte)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pgte/pouch-stream-tests/issues"
