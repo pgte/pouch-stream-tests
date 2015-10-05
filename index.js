@@ -117,7 +117,7 @@ function setup(PouchRemoteStream, PouchStreamServer) {
       var repl = newDB.replicate.to(clientDB);
 
       repl.once('error', function(err) {
-        console.error(err.stack);
+        console.error('replication error: ' + err.stack);
         throw err;
       });
       repl.once('complete', function() {
