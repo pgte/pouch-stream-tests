@@ -47,11 +47,7 @@ function setup(PouchRemoteStream, PouchStreamServer) {
     });
 
     it('can be created and piped into a stream', function(done) {
-      var clientStream = remote.stream();
-      var serverStream = server.stream();
-
-      clientStream.pipe(serverStream).
-      pipe(clientStream);
+      remote.stream.pipe(server.stream()).pipe(remote.stream);
       done();
     });
 
