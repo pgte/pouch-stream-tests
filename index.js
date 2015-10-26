@@ -54,7 +54,7 @@ function setup(PouchRemoteStream, PouchStreamServer) {
     it('doesnt work if server does not know database', function(done) {
       clientDB.post({a:1,b:2}, function(err, result) {
         expect(err).to.not.be.null();
-        expect(err.message).to.equal('No database named mydb');
+        expect(err.message).to.match(/No .*database named mydb/);
         done();
       });
     });
