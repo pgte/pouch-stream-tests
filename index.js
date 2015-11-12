@@ -23,6 +23,7 @@ function setup(PouchRemoteStream, PouchStreamServer) {
     });
 
     var server = PouchStreamServer();
+    var serverStream = server.stream();
 
     var remote = PouchRemoteStream();
 
@@ -47,7 +48,7 @@ function setup(PouchRemoteStream, PouchStreamServer) {
     });
 
     it('can be created and piped into a stream', function(done) {
-      remote.stream.pipe(server.stream()).pipe(remote.stream);
+      remote.stream.pipe(serverStream).pipe(remote.stream);
       done();
     });
 
@@ -217,9 +218,13 @@ function setup(PouchRemoteStream, PouchStreamServer) {
           // test cancelation
           sync.cancel();
           cb();
+        },
+        function(cb) {
+          serverStream.once('finish', cb);
+          remote.stream.end();
+          serverStream.end();
         }
         ], done);
     });
-
   });
 };
